@@ -6,4 +6,11 @@ This project merges entries in the conference signup sheet to additional user in
 2. Some users will use different email addresses and won't match. Iteritively run main.py and hand-edit the local copy to resolve those cases.
 3. It may be helpful to add checks in the local copy for patreons who are not members, etc.
 
-Give the output to Olivier for the next step.
+Give the output to Olivier for the next step- generating png files.
+
+Drag the png files into a Word document:
+1. About 10 blank nametags
+2. Sponsor nametags
+3. Member and Guest nametags
+
+Run the Word Macro to format the pages for printing.
