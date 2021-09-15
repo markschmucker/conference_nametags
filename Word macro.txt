@@ -1,0 +1,44 @@
+Drag all the pngs (blanks, sponsors, and investors) into a Word doc and run this macro:
+
+Sub FormatBadges()
+'
+' FormatBadges Macro
+'
+'
+Dim i As Long
+Dim width As Single
+Dim aspect As Single
+Dim space_between_columns As String
+Dim inches_between_rows As Long
+
+' Want 4x3 but the pngs extend all the way to the edge, so
+' will make the images a little smaller than the 4x3 page,
+' and leave a little whitespace all around.
+width = 4  ' inches
+aspect = 4 / 3
+margin = 0.15
+
+With ActiveDocument
+    ' Set image size
+    For i = 1 To .InlineShapes.Count
+        With .InlineShapes(i)
+            .width = InchesToPoints(width - 2 * margin)
+            .Height = InchesToPoints(width / aspect - 2 * margin)
+        End With
+    Next i
+        
+    ' Set layout
+    With .PageSetup
+        .LeftMargin = InchesToPoints(margin)
+        .RightMargin = InchesToPoints(margin)
+        .TopMargin = InchesToPoints(margin)
+        .BottomMargin = InchesToPoints(margin)
+        .PageWidth = InchesToPoints(width)
+        .PageHeight = InchesToPoints(width / aspect)
+    End With
+    
+    ' Set page size
+        
+End With
+
+End Sub
